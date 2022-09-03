@@ -7,6 +7,7 @@ from datetime import datetime, date
 from Hero_class import Hero
 
 
+
 def list_from_api():
     rand_page = random.randint(1, 5)
     api_url = f'https://ragnarokapi.bravan.cloudns.cl/monsters/?page={rand_page}&limit=100'
@@ -36,6 +37,7 @@ def time_to_num():
 def data_hero(name):
     with open(f'{name}.json', 'r+') as readfile:
         text = json.load(readfile)
+
     hero_names = Hero(text['hero_name'])
     hero_names.max_energy = text['max_energy']
     if date_to_num() - text['time'][1] >= 1 or time_to_num() - text['time'][0] >= 1800:
