@@ -63,11 +63,11 @@ class Hero:
             print(f'Монстр победил,хотите повторно испытать удачу?\n'
                   f'Если да,то нажмите 1,если не сегодня 2,выйти из игры 3')
             return False
-        else:
-            self.update_exp_and_check_lvl(random_exp)
-            self.monsters.append(monsters_name)
-            self.save_hero()
-            return True
+
+        self.update_exp_and_check_lvl(random_exp)
+        self.monsters.append(monsters_name)
+        self.save_hero()
+        return True
 
     def hero_choice_is_leave(self):
         self.current_energy -= 3
